@@ -11,4 +11,4 @@ def savedata(dictionary):
 def usedata():
     with open('mockdata.json') as json_file:
         data = json.load(json_file)
-        print(data)
+        return data

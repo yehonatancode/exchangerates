@@ -1,4 +1,5 @@
 import APICall
+from Modes import get_mode
 from savetojson import savedata, usedata
 from specific_convert import generaterates
 
@@ -11,7 +12,6 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     generaterates()
-    # savedata()
-    usedata()
+
 #
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

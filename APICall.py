@@ -1,21 +1,36 @@
+import json
+
 import requests
 
+API_KEY = "e2KI8bQcyOFfFC8P2a5B5xF0Sz3fhBQk"
 #For some reason direct access is denied, resulting in "insufficient key" although it is legal.
 #Therefore, I used indirect access to the api, as used in specific_convert file.
-def generatecall():
-    API_KEY = "e2KI8bQcyOFfFC8P2a5B5xF0Sz3fhBQk"
-    api_url = "https://exchangeratesapi.io/documentation/"
-    command = f'https://api.exchangeratesapi.io/v1/latest? access_key = {API_KEY}'
-    print(command)
-    command2 = f'https://api.exchangeratesapi.io/v1/symbols'
+
+# def generatecall():
+#     api_url = "https://exchangeratesapi.io/documentation/"
+#     command = f'https://api.exchangeratesapi.io/v1/latest? access_key = {API_KEY}'
+#     print(command)
+#     command2 = f'https://api.exchangeratesapi.io/v1/symbols'
+#
+#     payload = {}
+#     headers= {
+#       "apikey": API_KEY
+#     }
+#
+#     response = requests.request("GET", command2, headers=headers, data = payload)
+#
+#     status_code = response.status_code
+#     print(response.text)
+
+def api_call():
+    url = "https://api.apilayer.com/exchangerates_data/latest"
 
     payload = {}
-    headers= {
-      "apikey": "e2KI8bQcyOFfFC8P2a5B5xF0Sz3fhBQk"
+    headers = {
+        "apikey": API_KEY
     }
 
-    response = requests.request("GET", command2, headers=headers, data = payload)
-
-    status_code = response.status_code
-    print(response.text)
-
+    response = requests.request("GET", url, headers=headers, data=payload)
+    data = json.loads(response.text)
+    # savedata(input_dict) - optional, incase we would like to change/add data to JSON mock file.
+    return data
