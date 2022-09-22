@@ -1,8 +1,9 @@
-from APICall import api_call
+from src.APICall import api_call
 from savetojson import usedata
 
-# MODE = 'DEV'
-MODE = 'PROD'
+Modes = {'DEV', 'PROD'}
+MODE = 'DEV'
+# MODE = 'PROD'
 d = {}
 
 def get_mode():
@@ -14,3 +15,8 @@ def get_mode():
         d = usedata()
 
     return d
+
+def set_mode(value : str):
+    if value in Modes:
+        MODE = value
+

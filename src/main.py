@@ -1,7 +1,5 @@
-import APICall
-from Modes import get_mode
-from savetojson import savedata, usedata
 from specific_convert import generaterates
+from src.Modes import set_mode
 
 
 def print_hi(name):
@@ -11,7 +9,7 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    generaterates()
-
+    # generaterates()
+    set_mode('PROD')
 #
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

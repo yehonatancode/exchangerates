@@ -2,6 +2,8 @@ import json
 
 import requests
 
+from src.savetojson import savedata, save_mode
+
 API_KEY = "e2KI8bQcyOFfFC8P2a5B5xF0Sz3fhBQk"
 #For some reason direct access is denied, resulting in "insufficient key" although it is legal.
 #Therefore, I used indirect access to the api, as used in specific_convert file.
@@ -31,6 +33,8 @@ def api_call():
     }
 
     response = requests.request("GET", url, headers=headers, data=payload)
-    data = json.loads(response.text)
-    # savedata(input_dict) - optional, incase we would like to change/add data to JSON mock file.
-    return data
+    input_dict = json.loads(response.text)
+    to_save = save_mode()
+    if to_save:
+        savedata(input_dict)  # optional, incase we would like to change/add data to JSON mock file.
+    return input_dict

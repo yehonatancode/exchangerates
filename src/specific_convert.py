@@ -1,9 +1,5 @@
-import json
-from time import sleep
-import requests
-from APICall import api_call
-from Modes import get_mode
-from savetojson import savedata
+from src.Modes import get_mode
+
 
 def generaterates(datadictionary : dict = get_mode()):
   input_dict = datadictionary['rates']
