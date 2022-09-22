@@ -9,6 +9,7 @@ in case you'd like to use unit tests, make sure you
 installed pytest as follows:
 
 python -m pip install pytest
+
 python -m pip install pytest-mock
 
 Enjoy.
