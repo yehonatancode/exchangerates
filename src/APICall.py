@@ -4,7 +4,7 @@ import requests
 
 from src.savetojson import savedata, save_mode
 
-API_KEY = "e2KI8bQcyOFfFC8P2a5B5xF0Sz3fhBQk"
+API_KEY = "" #todo add own API key
 #For some reason direct access is denied, resulting in "insufficient key" although it is legal.
 #Therefore, I used indirect access to the api, as used in specific_convert file.
 
